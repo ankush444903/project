@@ -4,15 +4,15 @@ import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 
 const Sidebar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(true); // Set the initial state of isOpen to true to keep the sidebar open
+  const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen); // Toggle the value of isOpen
+    setIsOpen(!isOpen);
   };
 
   useEffect(() => {
     const handleResize = () => {
-      setIsOpen(window.innerWidth >= 600); // Set isOpen based on the window width
+      // Adjust isOpen state based on window width if needed
     };
 
     window.addEventListener('resize', handleResize);
@@ -33,7 +33,6 @@ const Sidebar = ({ children }) => {
       name: "Other",
       icon: <FaRegChartBar />
     },
-
     {
       path: " ",
       name: "Settings",
@@ -52,14 +51,14 @@ const Sidebar = ({ children }) => {
           <li key={index}>
             {item.subMenu ? (
               <>
-                <div className="link" onClick={toggleSidebar}>
+                <div className="flex items-center link">
                   <div className="icon">{item.icon}</div>
                   <div style={{ display: isOpen ? "block" : "none" }} className="link_text">{item.name}</div>
                 </div>
                 {isOpen && renderMenuItems(item.subMenu)}
               </>
             ) : (
-              <NavLink to={item.path} className="link" activeClassName="active">
+              <NavLink to={item.path} className="flex items-center link" activeClassName="active">
                 <div className="icon">{item.icon}</div>
                 <div style={{ display: isOpen ? "block" : "none" }} className="link_text">{item.name}</div>
               </NavLink>
@@ -69,21 +68,39 @@ const Sidebar = ({ children }) => {
       </ul>
     );
   };
-
-  return (
-    <div className="container">
-      <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
+//-------- using flex this section-------
+ // return (
+    <div className="flex">
+      <div className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="top_section">
-          <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">Logo</h1>
-          <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
-            <FaBars onClick={toggleSidebar} />
+          <h1 className="logo">{isOpen && "Logo"}</h1>
+          <div className="bars" onClick={toggleSidebar}>
+            <FaBars />
           </div>
         </div>
         {renderMenuItems(menuItem)}
       </div>
-      <main>{children}</main>
+      <main className={`content ${isOpen ? "expand" : ""}`}>
+        {children}
+      </main>
     </div>
-  );
+ // );
+//};
+// ------- side bar container ------------
+return (
+  <div className="container">
+    <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
+      <div className="top_section">
+        <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">Logo</h1>
+        <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
+          <FaBars onClick={toggleSidebar} />
+        </div>
+      </div>
+      {renderMenuItems(menuItem)}
+    </div>
+    <main>{children}</main>
+  </div>
+);
 };
 
 export default Sidebar;
