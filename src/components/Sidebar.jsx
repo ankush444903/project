@@ -38,8 +38,8 @@ const Sidebar = ({ children }) => {
       name: "Settings",
       icon: <FaUserAlt />,
       subMenu: [
-        { path: "/productList", name: "Request a Tile", isSubMenu: true },
-        { path: "/product", name: "Application Tiles", isSubMenu: true },
+        { path: "/Form", name: "Request a Tile", isSubMenu: true },
+        { path: "/Form2", name: "Application Tiles", isSubMenu: true },
       ]
     },
   ];

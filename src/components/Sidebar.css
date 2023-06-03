@@ -2,9 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.container {
-  display: flex;
-}
 
 .sidebar {
   width: 200px;
@@ -13,20 +10,7 @@
   transition: width 0.3s;
 }
 
-.top_section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.logo {
-  display: block;
-  color: #8493a5;
-  font-size: 20px;
-  font-weight: bold;
-}
-
+ /*------ add hear  constant side bar ----*/
 .bars {
   display: none;
   cursor: pointer;
@@ -40,34 +24,11 @@
   color: #8493a5;
 }
 
-.link_text {
-  margin-left: 10px;
-}
-
-.link.active {
-  color: #fff;
-  background-color: #8493a5;
-}
-
-.sub-menu {
-  margin-left: 20px;
-}
 
 @media screen and (max-width: 700px) {
-  .sidebar {
-    width: 50px;
-  }
-  
-  .logo {
-    display: none;
-  }
-  
-  .bars {
+
+.bars {
     display: block;
     margin-left: 10px;
-  }
-  
-  .link_text {
-    display: none;
   }
 }

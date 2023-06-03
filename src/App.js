@@ -6,8 +6,8 @@ import Dashboard from './pages/Dashboard.jsx';
 import Settings from './pages/Settings.jsx';
 import Other from './pages/Other.jsx';
 import Comment from './pages/Comment.jsx';
-import Product from './pages/Product.jsx';
-import ProductList from './pages/ProductList.jsx';
+import ProductService from './pages/ProductService.jsx';
+import Form from './pages/From.jsx';
 import Settings1 from './pages/Settings1.jsx';
 import Settings2 from './pages/Settings2.jsx';
 
@@ -24,8 +24,8 @@ const App = () => {
 </Route>
           <Route path="/comment" element={<Comment />} />
           <Route path="/Other" element={<Other />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/productList" element={<ProductList />} />
+          <Route path="/Form2" element={<ProductService />} />
+          <Route path="/Form" element={<Form />} />
         </Routes>
       </Sidebar>
     </BrowserRouter>
