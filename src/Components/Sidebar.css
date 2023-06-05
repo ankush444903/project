@@ -1,0 +1,94 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+.sidebar {
+  width: 150px;
+  background-color: var(--theme-menu-background-color);
+  color: #8493a5;
+  transition: width 0.3s;
+}
+
+ /*------ add hear  constant side bar ----*/
+.bars {
+  display: none;
+  cursor: pointer;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #8493a5;
+}
+
+
+@media screen and (max-width: 700px) {
+
+.bars {
+    display: block;
+    margin-left: 10px;
+  }
+}
+/* ------css-----*/
+
+ /*   .container {
+        display: flex;
+    }
+
+    main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sidebar {
+        background: #000;
+        color: #fff;
+        height: 100vh;
+        width: 200px;
+        transition: all 0.5s;
+    }
+
+    .top_section {
+        display: flex;
+        align-items: center;
+        padding: 20px 15px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .bars {
+        display: flex;
+        font-size: 25px;
+        margin-left: 50px;
+    }
+
+    .link {
+        display: flex;
+        color: #fff;
+        padding: 10px 15px;
+        gap: 15px;
+        transition: all 0.5s;
+    }
+
+    .link:hover {
+        background: lightskyblue;
+        color: #000;
+        transition: all 0.5s;
+    }
+
+    .active {
+        background: lightskyblue;
+        color: #000;
+    }
+
+    .icon,
+    .link_text {
+        font-size: 20px;
+    }
+
+*/
